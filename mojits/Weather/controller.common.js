@@ -9,14 +9,15 @@ YUI.add('mojit', function(Y, NAME)
         
         index: function(ac)
         {
-            var self = this;
+            var self = this,
+                zip = ac.params.url('zip') || '90025';
             
-            ac.models.ModelWeather.getData({zip: ac.params.url('zip') || '90025'}, function(err, res)
+            ac.models.ModelYql.select({fields: {location: zip}}, function(err, res)
             {
                 var channel = res.query.results.channel;
                 ac.done(Y.merge(ac.context, {
                     title: channel.description,
-                    content: channel.item.description,
+                    content: channel.item.description.split(/(?:<br \/>\n*){2}/i).slice(0,2).join('<br><br>'),
                     config: Y.JSON.stringify(self.config)
                 }));
             });
@@ -24,4 +25,4 @@ YUI.add('mojit', function(Y, NAME)
             ac.assets.addCss('./index.css');
         }
     };
-}, '0.0.1', {requires: ['json', 'mojito', 'ModelWeather']});
+}, '0.0.1', {requires: ['json', 'mojito', 'ModelYql']});

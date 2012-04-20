@@ -2,6 +2,7 @@
     {
         "settings": ["master"],
         "config": {
+            "yqlTable": "weather.forecast",
             "bar": "bar"
         }
     },

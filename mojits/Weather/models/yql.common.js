@@ -1,4 +1,4 @@
-YUI.add('ModelWeather', function(Y, NAME)
+YUI.add('ModelYql', function(Y, NAME)
 {
     Y.mojito.models[NAME] =
     {
@@ -7,12 +7,29 @@ YUI.add('ModelWeather', function(Y, NAME)
             this.config = config;
         },
         
-        getData: function(args, cb)
+        select: function(args, cb)
         {
-            Y.YQL('select * from weather.forecast where location=' + args.zip, function(res)
+            var self = this,
+                table = args.table || self.config.yqlTable,
+                fields = self.buildWhere(args.fields);
+            
+            Y.YQL('select * from ' + table + ' where ' + fields, function(res)
             {
                 cb(null, res);
             });
+        },
+        
+        buildWhere: function(fields)
+        {
+            var where = '',
+                field;
+            
+            for(field in fields)
+            {
+                where += (where ? ' ' : '') + field + '=' + fields[field];
+            }
+            
+            return where;
         }
     };
 }, '0.0.1', {requires: ['yql']});
