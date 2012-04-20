@@ -6,6 +6,16 @@
                 "combo": true
             }
         },
+        "log": {
+            "client": {
+                "level": "warn",
+                "yui": false
+            },
+            "server": {
+                "level": "info",
+                "yui": false
+            }
+         },
         "specs": {
             "weather": {
                 "type": "HTMLFrameMojit",
