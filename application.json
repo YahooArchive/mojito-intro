@@ -1,0 +1,25 @@
+[
+    {
+        "settings": ["master"],
+        "yui": {
+            "config": {
+                "combo": true
+            }
+        },
+        "specs": {
+            "weather": {
+                "type": "HTMLFrameMojit",
+                "config": {
+                    "title": "Weather",
+                    "deploy": true,
+                    "child": {
+                        "type": "Weather",
+                        "config": {
+                            "foo": null
+                        }
+                    }
+                }
+            }
+        }
+    }
+]

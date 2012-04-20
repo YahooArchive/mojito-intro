@@ -1,0 +1,8 @@
+[{
+    "settings": [ "master" ],
+    "home": {
+      "verbs": ["get"],
+      "path": "/",
+      "call": "weather.index"
+    }
+}]
