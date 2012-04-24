@@ -15,11 +15,10 @@ YUI.add('mojit', function(Y, NAME)
             ac.models.ModelYql.select({fields: {location: zip}}, function(err, res)
             {
                 var channel = res.query.results.channel;
-                ac.done(Y.merge(ac.context, {
+                ac.done({
                     title: channel.description,
-                    content: channel.item.description.split(/(?:<br \/>\n*){2}/i).slice(0,2).join('<br><br>'),
-                    config: Y.JSON.stringify(self.config)
-                }));
+                    content: channel.item.description.split(/(?:<br \/>\n*){2}/i).slice(0,2).join('<br><br>')
+                });
             });
             
             ac.assets.addCss('./index.css');

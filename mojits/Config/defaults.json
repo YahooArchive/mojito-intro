@@ -1,0 +1,15 @@
+[
+    {
+        "settings": ["master"],
+        "config": {
+            "foo": "defaults",
+            "bar": "defaults"
+        }
+    },
+    {
+        "settings": ["device:iphone"],
+        "config": {
+            "baz": "defaults.iphone"
+        }
+    }
+]

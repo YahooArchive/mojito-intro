@@ -9,10 +9,12 @@
         "log": {
             "client": {
                 "level": "warn",
+                "timestamp": false,
                 "yui": false
             },
             "server": {
                 "level": "info",
+                "timestamp": false,
                 "yui": false
             }
          },
@@ -25,9 +27,35 @@
                     "child": {
                         "type": "Weather",
                         "config": {
-                            "foo": null
                         }
                     }
+                }
+            },
+            "preso": {
+                "type": "HTMLFrameMojit",
+                "config": {
+                    "title": "Intro to Mojito",
+                    "deploy": true,
+                    "child": {
+                        "type": "Preso"
+                    }
+                }
+            },
+            "conf": {
+                "type": "Config",
+                "config": {
+                    "foo": "app"
+                }
+            }
+        }
+    },
+    {
+        "settings": ["device:iphone"],
+        "specs": {
+            "conf": {
+                "type": "Config",
+                "config": {
+                    "foo": "app.iphone"
                 }
             }
         }

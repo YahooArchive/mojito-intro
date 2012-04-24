@@ -10,8 +10,6 @@ YUI.add('WeatherBinder', function(Y, NAME)
             Y.one('body').append(form);
             form.on('submit', self.handleForm, self);
             
-            console.log(proxy._mojito, 'warn')
-            
             self.proxy = proxy;
         },
         
@@ -41,15 +39,6 @@ YUI.add('WeatherBinder', function(Y, NAME)
                 context = proxy.context;
             
             self.updateTitle();
-            /*
-            proxy.render('fragment', {
-                type: proxy.type,
-                config: Y.JSON.stringify(proxy.config),
-                lang: context.lang,
-                device: context.device
-            }, function(err){Y.log(arguments, 'warn')});
-            */
-            //console.log('refreshed', arguments);
         },
         
         updateTitle: function()
