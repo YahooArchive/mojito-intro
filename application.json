@@ -13,7 +13,7 @@
                 "yui": false
             },
             "server": {
-                "level": "info",
+                "level": "warn",
                 "timestamp": false,
                 "yui": false
             }
@@ -37,7 +37,10 @@
                     "title": "Intro to Mojito",
                     "deploy": true,
                     "child": {
-                        "type": "Preso"
+                        "type": "Preso",
+                        "config": {
+                            "numSlides": 10
+                        }
                     }
                 }
             },
