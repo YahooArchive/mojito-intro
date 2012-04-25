@@ -21,4 +21,4 @@ h2 { margin:0 0 20px; padding:0; font-family: UltraRegular,Georgia,serif; text-s
 h2 { margin-top:30px; }
 ul { margin:0 12px; padding:0; }
 p,
-li { font-size:125%; padding: 3px 0; text-shadow: 1px 1px 2px #888; }
+li { font-size:125%; font-family:'Open Sans',Arial,sans-serif; padding: 3px 0; text-shadow: 1px 1px 2px #888; }
