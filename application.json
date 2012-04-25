@@ -39,7 +39,14 @@
                     "child": {
                         "type": "Preso",
                         "config": {
-                            "numSlides": 10
+                            "numSlides": 14
+                        }
+                    },
+                    "assets": {
+                        "top": {
+                            "css": [
+                                "/static/Preso/assets/preso.css"
+                            ]
                         }
                     }
                 }
