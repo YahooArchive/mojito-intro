@@ -11,7 +11,7 @@ YUI.add('ModelYql', function(Y, NAME)
         {
             var self = this,
                 table = args.table || self.config.yqlTable,
-                fields = self.buildWhere(args.fields);
+                fields = args.where || self.buildWhere(args.fields);
             
             Y.YQL('select * from ' + table + ' where ' + fields, function(res)
             {
@@ -26,7 +26,7 @@ YUI.add('ModelYql', function(Y, NAME)
             
             for(field in fields)
             {
-                where += (where ? ' ' : '') + field + '=' + fields[field];
+                where += (where ? ' AND ' : '') + field + '=' + fields[field];
             }
             
             return where;
