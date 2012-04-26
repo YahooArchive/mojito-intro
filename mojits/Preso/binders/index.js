@@ -57,12 +57,12 @@ YUI.add('PresoBinder', function(Y, NAME)
                 slideNum = 0;
             
             // left, up, page up respectively
-            if(key == 37 || key == 38 || key == 33)
+            if(key == 37 /*|| key == 38*/ || key == 33)
             {
                 slideNum = self.prevSlide;
             }
             // right, down, page down respectively
-            else if(key == 39 || key == 40 || key == 34)
+            else if(key == 39 /*|| key == 40*/ || key == 34)
             {
                 slideNum = self.nextSlide;
             }
