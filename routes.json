@@ -7,7 +7,8 @@
     },
     "preso": {
       "verbs": ["get"],
-      "path": "/slides",
+      "path": "/slides/:slide",
+      "regex": {"slide": "[0-9]*"},
       "call": "preso.index"
     },
     "home": {
