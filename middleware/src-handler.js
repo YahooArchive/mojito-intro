@@ -13,6 +13,7 @@ try {
         return [
             '<html><head>',
             '<link rel="stylesheet" href="/static/assets/highlight.css">',
+            '<style>body { font-size:150%; }</style>',
             '</head><body><pre><code>',
             content,
             '</code></pre></body></html>'
