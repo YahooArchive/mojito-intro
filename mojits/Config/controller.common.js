@@ -17,8 +17,9 @@ YUI.add('mojit', function(Y, NAME)
             ac.done({
                 context: json(ac.context),
                 config: json(self.config),
-                yui: json(ac.app.config.yui)
+                definition: json(ac.config.getDefinition('struct')),
+                app: json(ac.app.config.yui)
             });
         }
     };
-}, '0.0.1', {requires: ['json', 'mojito']});
+}, '0.0.1', {requires: ['mojito', 'json', 'mojito-config-addon']});

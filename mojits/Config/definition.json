@@ -1,5 +1,16 @@
 [
     {
-        "settings": [ "master" ]
+        "settings": [ "master" ],
+        "struct": {
+            "foo": "definition",
+            "bar": "definition"
+        }
+    },
+    {
+        "settings": ["device:iphone"],
+        "struct": {
+            "foo": "shinydefinition",
+            "bar": "shinydefinition"
+        }
     }
 ]
