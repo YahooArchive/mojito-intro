@@ -12,8 +12,6 @@ YUI.add('mojit', function(Y, NAME)
             var self = this,
                 json = Y.JSON.stringify;
             
-            self.config.foo = 'foo';
-            
             ac.done({
                 context: json(ac.context),
                 config: json(self.config),

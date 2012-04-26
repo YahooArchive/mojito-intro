@@ -1,16 +1,20 @@
 <div id="{{mojit_view_id}}">
     <h1>Mojito Request Flow</h1>
-    <ul>
+    <ol>
         <li>Middleware <span class="subtext">(Express)</span></li>
         <li>Routing <span class="subtext">(<code>routes.json</code>)</span></li>
         <li>App Configuration <span class="subtext">(<code>application.json</code>)</span></li>
-        <li>Controllers <span class="subtext">(<code>controller.{affinity}.js</code>)</span></li>
-        <li>Models <span class="subtext">(<code>{name}.{affinity}.js</code>)</span></li>
-        <li>Views <span class="subtext">(<code>{action}.{engine}.html</code>)</span></li>
-        <li>Binders <span class="subtext">(<code>{action}.js</code>)</span></li>
-        <li>Addons and Autoloads <span class="subtext">(YUI modules)</span></li>
-        <li>Assets <span class="subtext">(CSS and non-YUI libs)</span></li>
-    </ul>
+        <li>Mojits (server then client)</li>
+        <ul>
+            <li>Controllers <span class="subtext">(<code>controller.{affinity}.js</code>)</span></li>
+            <li>Addons and Autoloads <span class="subtext">(<code>{name}.{affinity}.js</code>)</span></li>
+            <li>Mojit Configuration <span class="subtext">(<code>defaults.json</code> and <code>definition.json</code>)</span></li>
+            <li>Models <span class="subtext">(<code>{name}.{affinity}.js</code>)</span></li>
+            <li>Views <span class="subtext">(<code>{action}.{engine}.html</code>)</span></li>
+            <li>Binders <span class="subtext">(<code>{action}.js</code>)</span></li>
+            <li>Assets <span class="subtext">(CSS, images, and non-YUI libs)</span></li>
+        </ul>
+    </ol>
     <p><a href="/">Example App</a></p>
     {{{nav}}}
 </div>

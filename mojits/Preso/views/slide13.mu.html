@@ -4,14 +4,15 @@
         <li>Addons are a primary means of sharing code in Mojito and carry an <em>affinity</em>.</li>
         <li>Addons have access to action context, other addons, autoloads, models, views, and configuration.</li>
         <li>Autoloads are normal YUI modules and will be deployed automatically if they are required in a binder, controller, etc.</li>
-        <li>Autoloads also carry an affinity.</li>
+        <li>Mojito ships with <a href="http://developer.yahoo.com/cocktails/mojito/api/">many addons</a>.</li>
     </ul>
     <pre><code>
 YUI.add('FooAddon', function(Y, NAME)
 {
     function Addon(command, adapter, ac) {
         // command carries details about the mojit instance.
-        // adapter contains done(), error(), etc
+        // adapter contains done(), error(), etc.
+        // ac is the action context of the current mojit.
     }
     
     Addon.prototype = {

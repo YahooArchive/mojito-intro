@@ -76,9 +76,16 @@
         "settings": ["device:iphone"],
         "specs": {
             "conf": {
-                "type": "Config",
+                "type": "HTMLFrameMojit",
                 "config": {
-                    "foo": "app.iphone"
+                    "title": "Config Example Iphone",
+                    "deploy": true,
+                    "child": {
+                        "type": "Config",
+                        "config": {
+                            "foo": "app.iphone"
+                        }
+                    }
                 }
             }
         }
