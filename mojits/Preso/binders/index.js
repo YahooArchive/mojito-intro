@@ -15,13 +15,12 @@ YUI.add('PresoBinder', function(Y, NAME)
         
         bind: function(node)
         {
-            var self = this;
-            
-            // sniff for proper key event
-            self.keyEvent = Y.UA.webkit || Y.UA.ie ? 'keydown' : 'keypress';
+            var self = this,
+                // sniff for proper key event
+                keyEvent = Y.UA.webkit || Y.UA.ie ? 'keydown' : 'keypress';
             
             // listen for keypress
-            Y.one('body').on(self.keyEvent, self.handleKey, self);
+            Y.one('body').on(keyEvent, self.handleKey, self);
             
             // make sure current slide is set
             self.onRefreshView(node);
@@ -29,11 +28,21 @@ YUI.add('PresoBinder', function(Y, NAME)
         
         onRefreshView: function(node)
         {
-            // get the current slide number from a data atribute within the view
-            this.currentSlide = parseInt(node.getAttribute('data-slide'), 10);
+            var self = this,
+                nav = node.one('nav');
+            
+            // get the current slide numbers from a data atribute within the nav links
+            self.currentSlide = self.getSlideAttr(nav, 'a.current');
+            self.nextSlide    = self.getSlideAttr(nav, 'a.next');
+            self.prevSlide    = self.getSlideAttr(nav, 'a.prev');
             
             // update page title
             Y.one('title').setContent(Y.one('h1').getContent());
+        },
+        
+        getSlideAttr: function(node, selector)
+        {
+            return parseInt(node.one(selector).getAttribute('data-slide'), 10);
         },
         
         changeSlide: function(num)
@@ -45,36 +54,34 @@ YUI.add('PresoBinder', function(Y, NAME)
         {
             var self = this,
                 key = e.keyCode,
-                numSlides = self.numSlides,
-                currentSlide = self.currentSlide,
-                nextSlide = 0;
+                slideNum = 0;
             
             // left, up, page up respectively
             if(key == 37 || key == 38 || key == 33)
             {
-                nextSlide = currentSlide > 1 ? currentSlide - 1 : numSlides;
+                slideNum = self.prevSlide;
             }
             // right, down, page down respectively
             else if(key == 39 || key == 40 || key == 34)
             {
-                nextSlide = currentSlide < numSlides ? currentSlide + 1 : 1;
+                slideNum = self.nextSlide;
             }
             // home
             else if(key == 36)
             {
-                nextSlide = 1;
+                slideNum = 1;
             }
             // end
             else if(key == 35)
             {
-                nextSlide = self.numSlides;
+                slideNum = self.numSlides;
             }
             
             // change slide if we got an expected key
-            if(nextSlide)
+            if(slideNum)
             {
                 e.preventDefault();
-                self.changeSlide(nextSlide);
+                self.changeSlide(slideNum);
             }
         }
     };
