@@ -1,6 +1,27 @@
-<div id="{{mojit_view_id}}" data-slide="13">
+<div id="{{mojit_view_id}}">
     <h1>Addons and Autoloads</h1>
     <ul>
-        <li></li>
+        <li>Addons are a primary means of sharing code in Mojito and carry an <em>affinity</em>.</li>
+        <li>Addons have access to action context, other addons, autoloads, models, views, and configuration.</li>
+        <li>Autoloads are normal YUI modules and will be deployed automatically if they are required in a binder, controller, etc.</li>
+        <li>Autoloads also carry an affinity.</li>
     </ul>
+    <pre><code>
+YUI.add('FooAddon', function(Y, NAME)
+{
+    function Addon(command, adapter, ac) {
+        // command carries details about the mojit instance.
+        // adapter contains done(), error(), etc
+    }
+    
+    Addon.prototype = {
+        namespace: 'foo',
+        doSomething: function () {
+        }
+    };
+    
+    Y.mojito.addons.ac.foo = Addon;
+}, '0.1.0', {requires: ['FooAutoload']});
+    </code></pre>
+    {{{nav}}}
 </div>

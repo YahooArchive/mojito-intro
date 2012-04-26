@@ -2,23 +2,35 @@ html,
 body,
 div { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 html { height:100%; }
-body {
-    padding:20px; margin:0; height:100%; background: #d7d7d7;
-    -webkit-radial-gradient(#F0F0F0, #BEBEBE); -moz-radial-gradient(#F0F0F0, #BEBEBE);
-}
+body { padding:20px; margin:0; height:100%; background: #d7d7d7; }
 body > div {
-    width:100%; height:100%; padding:30px 40px;
-    border:1px solid #bbb; border-radius:7px;
+    position:relative; width:100%; height:100%; padding:30px 40px;
+    border:1px solid #bbb; border-radius:7px; background: #fff;
     -webkit-border-radius: 10px; border-radius: 10px;
     -webkit-box-shadow: 2px 2px 8px 2px #aaa; -moz-box-shadow: 2px 2px 8px 2px #aaa; box-shadow: 2px 2px 8px 2px #aaa;
-    background: #fff;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#d6d3d6));
-    background-image: -moz-linear-gradient(top, #fff, #d6d3d6);
-    background-image: -webkit-linear-gradient(top, #fff, #d6d3d6);
+    background-image: -moz-linear-gradient(top, #fff, #d6d3d6); background-image: -webkit-linear-gradient(top, #fff, #d6d3d6);
 }
 h1,
-h2 { margin:0 0 20px; padding:0; font-family: UltraRegular,Georgia,serif; text-shadow: 1px 1px 3px #888; }
+h2 { margin:0 0 30px; padding:0; font-family: UltraRegular,Georgia,serif; text-shadow: 1px 1px 3px #888; }
 h2 { margin-top:30px; }
 ul { margin:0 12px; padding:0; }
+li { margin:7px 0; }
 p,
-li { font-size:125%; font-family:'Open Sans',Arial,sans-serif; padding: 3px 0; text-shadow: 1px 1px 2px #888; }
+li,
+dt,
+dd { font-size:125%; font-family:'Open Sans',Arial,sans-serif; padding: 3px 0; text-shadow: 1px 1px 2px #bbb; }
+pre {
+    padding:3px 20px 0px; line-height:1.5; border:1px solid #bbb; border-radius:5px; background: #fff;
+    -webkit-box-shadow: inset 0px 1px 3px 0px #aaa; -moz-box-shadow: inset 0px 1px 3px 0px #aaa; box-shadow: inset 0px 1px 3px 0px #aaa;
+}
+pre > code { font-size:125%; display:block; margin:-1.5ex 0; }
+code { font-family:courier; }
+dt,
+dd { border:1px solid #bbb; background: #fff; }
+dt { padding:10px 15px 0px; font-weight:bold; border-width:1px 1px 0; border-radius:5px 5px 0 0; }
+dd { padding:3px 15px 12px; border-width:0 1px 1px; border-radius:0 0 5px 5px; margin: 0 0 10px; }
+nav { position:absolute; bottom:30px; right:40px; }
+nav a { color:#888; font-weight:bold; text-decoration:none; }
+nav a:hover { text-decoration:underline; }
+.subtext { color:#888; font-size:85%; padding-left:.5ex; }

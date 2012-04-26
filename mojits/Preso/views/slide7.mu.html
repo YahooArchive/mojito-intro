@@ -1,16 +1,27 @@
-<div id="{{mojit_view_id}}" data-slide="7">
+<div id="{{mojit_view_id}}">
     <h1>Routing</h1>
     <ul>
-        <li></li>
+        <li>Stored in <code>routes.json</code> and can vary based on context.</li>
+        <li>Specify an HTTP method and a mojit action.</li>
+        <li>May contain Sinatra-style named params.</li>
+        <li>Calls an "anonymous" mojit or an entry in <code>specs</code>.</li>
+        <li>Can build URLs from routes using the <a href="http://developer.yahoo.com/cocktails/mojito/api/Url.common.html">url addon</a>.</li>
     </ul>
-    <code><pre>
+    <pre><code>
 [{
     "settings": [ "master" ],
     "preso": {
-      "verbs": ["get"],
-      "path": "/slides",
-      "call": "preso.index"
+        "verbs": ["get"],
+        "path": "/slides/:slide",
+        "call": "preso.index"
+    },
+    "foo": {
+        "verbs": ["get"],
+        "path": "/foo",
+        "call": "@Foo.index",
+        "params": "bar=bar&quuz=quuz"
     }
 }]
-    </pre></code>
+    </code></pre>
+    {{{nav}}}
 </div>

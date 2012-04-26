@@ -1,6 +1,15 @@
-<div id="{{mojit_view_id}}" data-slide="11">
+<div id="{{mojit_view_id}}">
     <h1>Views</h1>
     <ul>
-        <li></li>
+        <li>Out of the box views are <a href="http://mustache.github.com/">Mustache</a> templates.</li>
+        <li>The view must contain a view id for binders to work.</li>
+        <li>The view engine is pluggable.</li>
     </ul>
+    <pre><code>
+&lt;div id="&#123;{mojit_view_id}}">
+    &lt;h1>&#123;{title}}&lt;/h1>
+    &#123;&#123;{content}}}
+&lt;/div>
+    </code></pre>
+    {{{nav}}}
 </div>

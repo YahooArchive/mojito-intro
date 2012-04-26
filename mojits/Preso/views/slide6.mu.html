@@ -1,8 +1,25 @@
-<div id="{{mojit_view_id}}" data-slide="6">
+<div id="{{mojit_view_id}}">
     <h1>Middleware</h1>
     <ul>
         <li>Middleware is built on <a href="http://expressjs.com/">Express</a> and only executes on the server.</li>
+        <li>Middleware has limited access to the rest of Mojito.</li>
         <li>Mojito ships with several pieces of middleware including <a href="https://github.com/yahoo/mojito/blob/master/source/lib/app/middleware/mojito-contextualizer.js">contextualizer</a>, static asset handler, request tunnel, body parser, cookie parser, and router.</li>
         <li>A combination of built-in and custom middleware can be configured in <code>application.json</code>.</li>
+        <li>This is the only place where you'll recognize that node.js is being used.</li>
     </ul>
+    <pre><code>
+module.exports = function (req, res, next) {
+    // do something
+    next();
+};
+    </code></pre>
+    <pre><code>
+"middleware": [
+    "mojito-handler-static",
+    "./middleware/contextualizer.js",
+    "mojito-handler-tunnel",
+    "mojito-router"
+]
+    </code></pre>
+    {{{nav}}}
 </div>

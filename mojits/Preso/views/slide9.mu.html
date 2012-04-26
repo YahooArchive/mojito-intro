@@ -1,6 +1,27 @@
-<div id="{{mojit_view_id}}" data-slide="9">
+<div id="{{mojit_view_id}}">
     <h1>Controllers</h1>
     <ul>
-        <li></li>
+        <li>The controller is the core of a mojit.</li>
+        <li>A controller may run on the client or server (or both).</li>
+        <li>There may be separate controllers for the client and server.</li>
+        <li>Controller methods correspond to <em>actions</em>.</li>
+        <li>Controllers have access to action context (<code>ac</code>), addons, autoloads, models, views, and configuration.</li>
     </ul>
+    <pre><code>
+YUI.add('Foo', function(Y, NAME)
+{
+    Y.mojito.controllers[NAME] =
+    {
+        init: function(config) {
+            this.config = config;
+        },
+        
+        index: function(ac) {
+            // do stuff
+        }
+    };
+}, '0.0.1', {requires: ['mojito']});
+    </code></pre>
+    <p><a href="https://github.com/gzip/mojito-app/blob/master/mojits/Weather/controller.common.js">Example controller</a></p>
+    {{{nav}}}
 </div>

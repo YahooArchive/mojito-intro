@@ -1,6 +1,30 @@
-<div id="{{mojit_view_id}}" data-slide="12">
+<div id="{{mojit_view_id}}">
     <h1>Binders</h1>
     <ul>
-        <li></li>
+        <li>Binders are the sole access point to controllers and the rest of Mojito in the client.</li>
+        <li>Binders have access to autoloads and <a href="http://developer.yahoo.com/cocktails/mojito/api/Y.mojito.MojitProxy.html">MojitProxy</a>, which in turn wraps the controller and configuration.</li>
+        <li>Binders provide a messaging interface for cross-mojit communication via <code>subscribe</code> and <code>listen</code>.</li>
     </ul>
+    <pre><code>
+YUI.add('FooBinder', function(Y, NAME)
+{
+    Y.namespace('mojito.binders')[NAME] =
+    {
+        init: function(mojitProxy) {
+            this.proxy = mojitProxy;
+        },
+        
+        bind: function(node) {
+            // set up some listeners
+            // node is the Y.Node containing id="&#123;{mojit_view_id}}" in the view
+        },
+        
+        onRefreshView: function(node) {
+            // do something after refreshView
+        }
+    };
+}, '0.0.1', {requires: ['mojito-client']});
+    </code></pre>
+    <p><a href="https://github.com/gzip/mojito-app/blob/master/mojits/Weather/binders/index.js">Example binder</a></p>
+    {{{nav}}}
 </div>

@@ -1,14 +1,16 @@
-<div id="{{mojit_view_id}}" data-slide="3">
+<div id="{{mojit_view_id}}">
     <h1>Installing Mojito</h1>
-    <ul>
-        <li><a href="http://nodejs.org/#download">Install node.js</a></li>
-        <li><code>$ sudo npm i mojito -g</code></li>
-        <li><code>$ sudo npm i nodemon -g</code> (optional)</li>
-    </ul>
+    <p>First <a href="http://nodejs.org/#download">Install node.js</a>, then:</p>
+    <pre><code>
+$ sudo npm i mojito -g
+$ sudo npm i nodemon -g
+    </code></pre>
     <h2>Git These Slides</h2>
-    <ul>
-        <li><a href="http://git-scm.com/download">Install git</a></li>
-        <li><code>$ git clone git://github.com/gzip/mojito-app.git</code></li>
-        <li><code>$ cd mojito-app && nodemon -w . start.js</code></li>
-    </ul>
+    <p><a href="https://github.com/gzip/mojito-app">Browse at GitHub</a> or <a href="http://git-scm.com/download">install git</a>, then:</p>
+    <pre><code>
+$ git clone git://github.com/gzip/mojito-app.git
+$ cd mojito-app && nodemon -w . start.js
+    </code></pre>
+    <p>And open your browser to <span class="subtext">http://localhost:8777/slides/</span></p>
+    {{{nav}}}
 </div>

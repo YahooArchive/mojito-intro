@@ -1,0 +1,12 @@
+<div id="{{mojit_view_id}}">
+    <h1>Configuration</h1>
+    <ul>
+        <li>Configuration can be defined in <code>application.json</code> under <code>specs</code> for an individual mojit or at the root for configuration which is available to the entire application.</li>
+        <li>Configuration can be defined in <code>defaults.json</code>, and <code>definitions.json</code> within each mojit.</li>
+        <li>Each configuration file resolves based on the current <em>configuration context</em>.</li>
+        <li>The configuration context must be matched in <code>dimensions.json</code> (both the key and value).</li>
+        <li>Configuration can also be added in the controller to be made available to the models and binders.</li>
+    </ul>
+    <p><a href="/conf">Example</a> <span class="subtext">(<a href="https://github.com/gzip/mojito-app/tree/master/mojits/Config">Source</a>)</span></p>
+    {{{nav}}}
+</div>

@@ -1,4 +1,4 @@
-YUI.add('mojit', function(Y, NAME)
+YUI.add('Weather', function(Y, NAME)
 {
     Y.mojito.controllers[NAME] =
     {
@@ -21,6 +21,7 @@ YUI.add('mojit', function(Y, NAME)
                 });
             });
             
+            // the latest version of Mojito will do this automagically
             ac.assets.addCss('./index.css');
         }
     };

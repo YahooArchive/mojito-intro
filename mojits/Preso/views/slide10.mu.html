@@ -1,3 +1,24 @@
-<div id="{{mojit_view_id}}" data-slide="10">
+<div id="{{mojit_view_id}}">
     <h1>Models</h1>
+    <ul>
+        <li>Models have access to configuration, autoloads, and other models.</li>
+        <li>Any additional data must be passed in through the controller.</li>
+    </ul>
+    <pre><code>
+YUI.add('ModelFoo', function(Y, NAME)
+{
+    Y.mojito.models[NAME] =
+    {
+        init: function(config) {
+            this.config = config;
+        },
+        
+        getData: function(args, cb) {
+            // do something
+        }
+    };
+}, '0.0.1', {requires: []});
+    </code></pre>
+    <p><a href="https://github.com/gzip/mojito-app/blob/master/models/yql.common.js">Example model</a></p>
+    {{{nav}}}
 </div>
