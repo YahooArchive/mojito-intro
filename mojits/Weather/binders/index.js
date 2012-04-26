@@ -4,12 +4,12 @@ YUI.add('WeatherBinder', function(Y, NAME)
     {
         init: function(proxy) 
         {
-            var self = this,
-                form = Y.Node.create('<form><label for=zip>zip</label><input type=text name=zip></form>');
+            var self = this;
             
-            Y.one('body').append(form);
-            form.on('submit', self.handleForm, self);
+            // attach a listener to the zipcode form
+            Y.one('form').on('submit', self.handleForm, self);
             
+            // story proxy for later use
             self.proxy = proxy;
         },
         
@@ -18,8 +18,7 @@ YUI.add('WeatherBinder', function(Y, NAME)
             e.halt();
             
             var self = this,
-                form = e.target,
-                zip = form.get('zip').get('value');
+                zip  = e.target.get('zip').get('value');
             
             if(zip)
             {
@@ -29,16 +28,12 @@ YUI.add('WeatherBinder', function(Y, NAME)
         
         bind: function(node)
         {
-            this.updateTitle();
+            this.onRefreshView(node);
         },
         
         onRefreshView: function(node, domNode)
         {
-            var self = this,
-                proxy = self.proxy,
-                context = proxy.context;
-            
-            self.updateTitle();
+            this.updateTitle();
         },
         
         updateTitle: function()

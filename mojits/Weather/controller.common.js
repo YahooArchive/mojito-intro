@@ -17,7 +17,10 @@ YUI.add('Weather', function(Y, NAME)
                 var channel = res.query.results.channel;
                 ac.done({
                     title: channel.description,
-                    content: channel.item.description.split(/(?:<br \/>\n*){2}/i).slice(0,2).join('<br><br>')
+                    // get rid of some unwanted content via regex hackery
+                    content: channel.item.description.split(/(?:<br \/>\n*){2}/i).slice(0,2).join('<br><br>'),
+                    // only include the form on the initial render
+                    form: ac.context.runtime === 'server' ? '<form method="GET"><label for="zip">zip</label><input type="text" name="zip"></form>' : ''
                 });
             });
             
