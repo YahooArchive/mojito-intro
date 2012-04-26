@@ -9,11 +9,16 @@ YUI.add('mojit', function(Y, NAME)
         
         index: function(ac)
         {
-            ac.done(
-                Y.merge(ac.context, {
-                    config: Y.JSON.stringify(this.config)
-                })
-            );
+            var self = this,
+                json = Y.JSON.stringify;
+            
+            self.config.foo = 'foo';
+            
+            ac.done({
+                context: json(ac.context),
+                config: json(self.config),
+                yui: json(ac.app.config.yui)
+            });
         }
     };
 }, '0.0.1', {requires: ['json', 'mojito']});
