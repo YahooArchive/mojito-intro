@@ -45,7 +45,7 @@
                     "child": {
                         "type": "Preso",
                         "config": {
-                            "numSlides": 15
+                            "numSlides": 16
                         }
                     },
                     "assets": {
