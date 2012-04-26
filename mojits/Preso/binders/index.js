@@ -56,6 +56,12 @@ YUI.add('PresoBinder', function(Y, NAME)
                 key = e.keyCode,
                 slideNum = 0;
             
+            // don't change for tab navigation
+            if(e.altKey || e.ctrlKey)
+            {
+                return;
+            }
+            
             // left, up, page up respectively
             if(key == 37 /*|| key == 38*/ || key == 33)
             {
