@@ -1,6 +1,9 @@
 [
     {
         "settings": ["master"],
+        "staticHandling": {
+             "appName": "/"
+         },
         "yui": {
             "config": {
                 "combo": true
@@ -17,7 +20,10 @@
                 "timestamp": false,
                 "yui": false
             }
-         },
+        },
+        "middleware": [
+            "./middleware/src-handler.js"
+        ],
         "specs": {
             "weather": {
                 "type": "HTMLFrameMojit",
@@ -52,9 +58,16 @@
                 }
             },
             "conf": {
-                "type": "Config",
+                "type": "HTMLFrameMojit",
                 "config": {
-                    "foo": "app"
+                    "title": "Config Example",
+                    "deploy": true,
+                    "child": {
+                        "type": "Config",
+                        "config": {
+                            "foo": "app"
+                        }
+                    }
                 }
             }
         }
