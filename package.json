@@ -1,24 +1,29 @@
 {
-    "name": "mojito",
-    "description": "My Mojito application",
-    "version": "0.0.1",
+    "name": "mojito-intro",
+    "description": "Intro to Mojito deck",
+    "version": "1.0.0",
     "author": {
-        "name": "Your Name",
-        "email": "nobody@yahoo-inc.com"
+        "name": "Gamaiel Zavala",
+        "email": "gamaiel@yahoo.com"
     },
-    "contributors": [
-          {
-              "name": "Your Name",
-              "email": "nobody@yahoo-inc.com"
-          }
+    "repositories": [
+        {
+            "type": "git", 
+            "url": "https://github.com/gzip/mojito-app"
+        }
     ],
+    "bugs": {
+        "url": "https://github.com/gzip/mojito-app/issues"
+    },
     "dependencies": {
-        "mojito": ">= 0.1.0"
+        "mojito": "0.3.x",
+        "supervisor": "0.3.x",
+        "highlight": "0.2.x"
     },
     "engines": {
-        "node": ">= 0.4.2 < 0.5.0"
+        "node": ">= 0.4.2 < 0.7.0"
     },
     "scripts": {
-        "start": "mojito start"
+        "start": "start.js"
     }
 }
