@@ -17,7 +17,6 @@
     },
     "dependencies": {
         "mojito": "0.3.x",
-        "supervisor": "0.3.x",
         "highlight": "0.2.x"
     },
     "engines": {
