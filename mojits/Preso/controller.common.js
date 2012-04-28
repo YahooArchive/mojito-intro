@@ -61,9 +61,9 @@ YUI.add('Preso', function(Y, NAME)
             
             return [
             '<nav>',
-                '<a href="/slides/' + self.prevSlide + '" data-slide="' + self.prevSlide + '" title="Previous Slide" class="prev">&lt;</a>',
-                '<a href="/slides/' + self.currentSlide + '" data-slide="' + self.currentSlide + '" title="Current Slide" class="current">#</a>',
-                '<a href="/slides/' + self.nextSlide + '" data-slide="' + self.nextSlide + '" title="Next Slide" class="next">&gt;</a>',
+                '<a href="/' + self.prevSlide + '" data-slide="' + self.prevSlide + '" title="Previous Slide" class="prev">&lt;</a>',
+                '<a href="/' + self.currentSlide + '" data-slide="' + self.currentSlide + '" title="Current Slide" class="current">#</a>',
+                '<a href="/' + self.nextSlide + '" data-slide="' + self.nextSlide + '" title="Next Slide" class="next">&gt;</a>',
             '</nav>'
             ].join(' ');
         }
