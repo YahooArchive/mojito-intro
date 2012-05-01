@@ -1,3 +1,5 @@
+// Copyright (c) 2012, Yahoo! Inc.  All rights reserved.
+// Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
 var fs = require('fs'),
     pa = require('path'),
     parseUrl = require('url').parse,
